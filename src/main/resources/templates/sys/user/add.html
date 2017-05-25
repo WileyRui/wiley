@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>新增用户</title>
+<script type="text/javascript">
+	function submitUser(){
+		var userName = document.getElementById("userName").value;
+		alert(userName);
+		document.getElementById("userForm").submit();
+	}
+</script>
+</head>
+<body>
+	<form id="userForm" method="post" th:action="@{/apin/user/add}">
+		<div class="u1">
+			<div class="u2">
+				<label>用户名：<input type="text" id="userName" name="sysUserFromMap.userName"/></label>
+			</div>
+			<div class="u2">
+				<label>密码：<input type="password" id="pwd" name="sysUserFromMap.password"/></label>
+			</div>
+			
+			<div class="u2">
+				<button type="submit" id="add" onclick="submitUser();">添加</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
