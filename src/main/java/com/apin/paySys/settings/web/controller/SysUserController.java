@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.apin.paySys.common.annotation.SysLog;
+
 @Controller
 @Scope("prototype")
 @RequestMapping("/apin/user/")
@@ -16,14 +18,15 @@ public class SysUserController {
 		model.addAttribute("name", "hello");
 		return "sys/user/list";
 	}
-	
+
 	@RequestMapping("addUI")
-	public String addUI(){
+	@SysLog(module = "用户管理", methods = "addUI", description = "测试aop")
+	public String addUI() {
 		return "sys/user/add";
 	}
-	
+
 	@RequestMapping("add")
-	public String add(HttpServletRequest request){
+	public String add(HttpServletRequest request) {
 		String name = request.getParameter("userName");
 		return name + "hello";
 	}
