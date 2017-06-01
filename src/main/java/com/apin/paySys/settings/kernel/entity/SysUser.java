@@ -5,13 +5,13 @@ import java.io.Serializable;
 import javax.persistence.Table;
 
 @Table(name = "sys_user")
-public class SysUserFormMap implements Serializable {
+public class SysUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String userName;
 	private String password;
 
-	public SysUserFormMap() {
+	public SysUser() {
 	}
 
 	public int getId() {

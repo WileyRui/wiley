@@ -13,10 +13,10 @@ import com.apin.paySys.common.annotation.SysLog;
 @Scope("prototype")
 @RequestMapping("/apin/user/")
 public class SysUserController {
-	@RequestMapping("list")
-	public String userUI(Model model) {
+	@RequestMapping("login")
+	public String login(Model model) {
 		model.addAttribute("name", "hello");
-		return "sys/user/list";
+		return "sys/user/login";
 	}
 
 	@RequestMapping("addUI")

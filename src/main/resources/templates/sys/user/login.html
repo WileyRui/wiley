@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+    <title>Login</title>
+    <script type="text/javascript" th:src="@{/jquery/jquery-1.8.3.js}"></script>
+    <script type="text/javascript" th:src="@{/js/login.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>  
+</head>
+<body>  
+    <div id="login">  
+        <h1>Login</h1>  
+        <form method="post">  
+            <input type="text" required="required" placeholder="userName" name="userName"></input>  
+            <input type="password" id="password" required="required" placeholder="password" name="password"></input>  
+            <button class="but" id="button" type="submit">登录</button>  
+        </form>  
+    </div>  
+</body>
+</html>
