@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apin.paySys.settings.kernel.mapper.SysUserMapper">
+    <!--mybatis ehcache缓存配置 -->
+    <!-- 以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 <cache type="org.mybatis.caches.ehcache.LoggingEhcache" /> -->
+    <!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+    <!-- 以下与实体类的中字段一致 -->
+    <resultMap type="com.apin.paySys.settings.kernel.entity.SysUser" id="baseResultMap">
+    	<id column="id" property="id" jdbcType="INTEGER"/>
+    	<result column="userName" property="userName" jdbcType="VARCHAR"/>
+    	<result column="password" property="password" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="selectId">
+        id,
+        userName,
+		password
+    </sql>
+
+    <select id="findByName" resultMap="baseResultMap" parameterType="java.util.HashMap">
+        SELECT
+        <include refid="selectId"/>
+        FROM sys_user
+        WHERE 1 = 1
+        <if test="userName != null and userName != ''">
+            AND userName = '${userName}'
+        </if>
+    </select>
+
+</mapper>

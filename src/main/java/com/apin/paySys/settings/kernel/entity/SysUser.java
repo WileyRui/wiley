@@ -2,9 +2,6 @@ package com.apin.paySys.settings.kernel.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Table;
-
-@Table(name = "sys_user")
 public class SysUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;

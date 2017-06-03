@@ -9,10 +9,10 @@
 <body>  
     <div id="login">  
         <h1>Login</h1>  
-        <form method="post">  
+        <form id="loginForm" method="post" th:action="@{/userLogin}">  
             <input type="text" required="required" placeholder="userName" name="userName"></input>  
             <input type="password" id="password" required="required" placeholder="password" name="password"></input>  
-            <button class="but" id="button" type="submit">登录</button>  
+            <button class="but" id="button" type="button">登录</button>  
         </form>  
     </div>  
 </body>
