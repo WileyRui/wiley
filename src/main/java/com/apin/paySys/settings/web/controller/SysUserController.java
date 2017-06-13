@@ -14,15 +14,15 @@ import com.apin.paySys.common.annotation.SysLog;
 @RequestMapping("/apin/user/")
 public class SysUserController {
 
-	@RequestMapping("addUI")
-	@SysLog(module = "用户管理", methods = "addUI", description = "测试aop")
-	public String addUI() {
-		return "sys/user/add";
-	}
+    @RequestMapping("addUI")
+    @SysLog(module = "用户管理", methods = "addUI", description = "测试aop")
+    public String addUI() {
+        return "sys/user/add";
+    }
 
-	@RequestMapping("add")
-	public String add(HttpServletRequest request) {
-		String name = request.getParameter("userName");
-		return name + "hello";
-	}
+    @RequestMapping("add")
+    public String add(HttpServletRequest request) {
+        String name = request.getParameter("userName");
+        return name + "hello";
+    }
 }

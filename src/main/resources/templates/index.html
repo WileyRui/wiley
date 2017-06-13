@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+    <title>index</title>
+    <script type="text/javascript" th:src="@{/jquery/jquery-1.8.3.js}"></script>
+</head>
+<body>  
+    <div id="login">  
+        <h2 th:text="'welcome ' + ${user.userName} + ' !'"></h2>
+    </div>  
+</body>
+</html>

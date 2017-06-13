@@ -8,7 +8,8 @@
 </head>
 <body>  
     <div id="login">  
-        <h1>Login</h1>  
+        <h1>Login</h1>
+        <h6 id="error"></h6>  
         <form id="loginForm" method="post" th:action="@{/userLogin}">  
             <input type="text" required="required" placeholder="userName" name="userName"></input>  
             <input type="password" id="password" required="required" placeholder="password" name="password"></input>  
