@@ -11,7 +11,6 @@ $(document).ready(function() {
 	});
 
 	$("#button").click(function(){
-
 		$.ajax({
 			type : "POST",
 			dataType : "json",
@@ -19,9 +18,10 @@ $(document).ready(function() {
 			data : $('#loginForm').serialize(),
 			success : function(data){
 			    if(data.status==200){
-			        $("#error").html(data.message);
 			        location.href="index?userName=" + data.userName;
 			    } else{
+			        $("#password").val("");
+			        $("#vertificationCode").attr("src","getGifCode?date=" + new Date().getTime());
 			        $("#error").html(data.message);
 			    }
 			},
@@ -30,4 +30,9 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	// 点击更换验证码
+	$("#vertificationCode").click(function(){
+	    $("#vertificationCode").attr("src","getGifCode?date=" + new Date().getTime());
+	})
 });

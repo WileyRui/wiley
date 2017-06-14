@@ -9,6 +9,7 @@ import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -67,6 +68,9 @@ public class ShiroRealm extends AuthorizingRealm {
 		UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
 		logger.info(
 				"验证当前Subject时获取到token为：" + ReflectionToStringBuilder.toString(token, ToStringStyle.MULTI_LINE_STYLE));
+		if(token.getUsername().equals("") || token.getPassword().length == 0){
+		    throw new AccountException("用户名或密码不能为空！");
+		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userName", token.getUsername());
 		SysUser user = sysUserMapper.findByName(map);
@@ -74,7 +78,7 @@ public class ShiroRealm extends AuthorizingRealm {
 			throw new AccountException("用户名或密码不正确！");
 		}
 		if(!String.valueOf(token.getPassword()).equals(user.getPassword())){
-		    throw new AccountException("密码错误！");
+		    throw new IncorrectCredentialsException("密码错误！");
 		}
 		return new SimpleAuthenticationInfo(user.getUserName(), user.getPassword(), getName());
 	}

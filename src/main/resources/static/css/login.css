@@ -60,7 +60,7 @@ input{
     margin: 0;   
 }
 #error{
-	color:orangered;
+	color:red;
 	font-size: xx-small;
 }
 #securityCode{
@@ -75,4 +75,17 @@ input{
 .remember{
 	color: orangered;
     vertical-align: -webkit-baseline-middle;
+}
+img{
+    width: 131px;
+    height: 42px;
+    border-radius: 8px;
+    vertical-align: top;
+    margin-left: 3px;
+}
+span{
+	color:gray;
+	font-size: xx-small;
+	vertical-align: sub;
+    margin-left: 80px;
 }
