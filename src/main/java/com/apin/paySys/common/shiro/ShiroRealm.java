@@ -73,7 +73,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		if (user == null) {
 			throw new AccountException("用户名或密码不正确！");
 		}
-		if(!token.getPassword().equals(user.getPassword())){
+		if(!String.valueOf(token.getPassword()).equals(user.getPassword())){
 		    throw new AccountException("密码错误！");
 		}
 		return new SimpleAuthenticationInfo(user.getUserName(), user.getPassword(), getName());

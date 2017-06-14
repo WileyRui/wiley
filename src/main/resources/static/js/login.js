@@ -14,19 +14,19 @@ $(document).ready(function() {
 
 		$.ajax({
 			type : "POST",
+			dataType : "json",
 			url : "/paySys/userLogin",
 			data : $('#loginForm').serialize(),
 			success : function(data){
-			    console.log("!!!!");
 			    if(data.status==200){
 			        $("#error").html(data.message);
-			        location.href="index";
+			        location.href="index?userName=" + data.userName;
 			    } else{
 			        $("#error").html(data.message);
 			    }
 			},
 			error : function(e){
-			    alert(e);
+			    console.log("error");
 			}
 		});
 	});

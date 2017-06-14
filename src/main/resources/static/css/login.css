@@ -39,7 +39,6 @@ input{
     font-size: 13px;
     font-weight:800;   
     color:orange;   
-/*     text-shadow:1px 1px 1px; */   
     border-top: 1px solid #312E3D;   
     border-left: 1px solid #312E3D;   
     border-right: 1px solid #312E3D;   
@@ -61,5 +60,19 @@ input{
     margin: 0;   
 }
 #error{
-	color:red;
+	color:orangered;
+	font-size: xx-small;
+}
+#securityCode{
+	width: 139px;
+}
+#check{
+	height: 15px;
+    margin-left: -129px;
+    margin-right: -125px;
+    vertical-align: sub;
+}
+.remember{
+	color: orangered;
+    vertical-align: -webkit-baseline-middle;
 }

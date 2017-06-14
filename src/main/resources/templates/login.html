@@ -8,11 +8,13 @@
 </head>
 <body>  
     <div id="login">  
-        <h1>Login</h1>
-        <h6 id="error"></h6>  
+        <h1>Enter</h1>
+        <p id="error"></p>  
         <form id="loginForm" method="post" th:action="@{/userLogin}">  
             <input type="text" required="required" placeholder="userName" name="userName"></input>  
-            <input type="password" id="password" required="required" placeholder="password" name="password"></input>  
+            <input type="password" id="password" required="required" placeholder="password" name="password"></input>
+            <input type="text" id="securityCode" placeholder="code" name="securityCode" /><br/>
+            <label class="remember"><input id="check" name="remember" type="checkbox" value="true" />记住我</label>   
             <button class="but" id="button" type="button">登录</button>  
         </form>  
     </div>  
