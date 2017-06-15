@@ -78,8 +78,6 @@ public class ShiroConfig {
      */
     @Bean
     public CookieRememberMeManager rememberMeManager() {
-
-        System.out.println("ShiroConfiguration.rememberMeManager()");
         CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
         cookieRememberMeManager.setCookie(rememberMeCookie());
         //rememberMe cookie加密的密钥 建议每个项目都不一样 默认AES算法 密钥长度(128 256 512 位)
@@ -132,7 +130,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         
         //配置记住我或认证通过可以访问的地址  
-        filterChainDefinitionMap.put("index", "user");  
+        filterChainDefinitionMap.put("/index", "user");  
         filterChainDefinitionMap.put("/", "user");
         
         // 配置不会拦截的页面

@@ -88,4 +88,14 @@ public class LoginController {
         model.addAttribute("userName", userName);
         return "index";
     }
+
+    /**
+     * 用户退出
+     * 
+     * @return
+     */
+    @RequestMapping("logout")
+    public String logout() {
+        return "login";
+    }
 }
