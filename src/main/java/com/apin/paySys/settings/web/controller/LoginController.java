@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.apin.paySys.settings.kernel.mapper.SysUserMapper;
 
 /**
+ * 用户登录
  * 
  * @author wiley create by 2017/6/2
  */
