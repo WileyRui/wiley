@@ -35,7 +35,7 @@ public class VertificationCodeController {
             captcha.out(response.getOutputStream());
             HttpSession session = request.getSession(true);  
             //存入Session
-            session.setAttribute("_code",captcha.text().toLowerCase());  
+            session.setAttribute("securityCode",captcha.text().toLowerCase());  
         } catch (Exception e) {
             System.err.println("获取验证码异常："+e.getMessage());
         }

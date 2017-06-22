@@ -21,6 +21,7 @@ $(document).ready(function() {
 			        location.href="index?userName=" + data.userName;
 			    } else{
 			        $("#password").val("");
+			        $("#securityCode").val("");
 			        $("#vertificationCode").attr("src","getGifCode?date=" + new Date().getTime());
 			        $("#error").html(data.message);
 			    }
