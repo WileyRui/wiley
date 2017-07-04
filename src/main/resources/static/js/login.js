@@ -14,7 +14,7 @@ $(document).ready(function() {
 		$.ajax({
 			type : "POST",
 			dataType : "json",
-			url : "/paySys/userLogin",
+			url : "/userLogin",
 			data : $('#loginForm').serialize(),
 			success : function(data){
 			    if(data.status==200){
@@ -32,6 +32,12 @@ $(document).ready(function() {
 		});
 	});
 	
+	$("body").keydown(function() {
+	    if (event.keyCode == "13") {//keyCode=13是回车键
+	        $("#button").click();
+	    }
+	});
+
 	// 点击更换验证码
 	$("#vertificationCode").click(function(){
 	    $("#vertificationCode").attr("src","getGifCode?date=" + new Date().getTime());
