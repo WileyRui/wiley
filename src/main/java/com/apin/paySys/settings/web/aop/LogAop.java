@@ -4,8 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -28,15 +26,21 @@ public class LogAop {
 
 	@Before("SysLogPointcut()")
 	private void startTime(JoinPoint point) {
-		// 执行方法名
-		String methodName = point.getSignature().getName();
-		String className = point.getTarget().getClass().getSimpleName();
-		// *========控制台输出=========*//
-		System.out.println("=====通知开始=====");
-		System.out.println(currentTime());
-		System.out.println("请求方法:" + className + "." + methodName + "()");
-		System.out.println(currentTime());
-		System.out.println("=====通知结束=====");
+		try {
+			// 执行方法名
+			String methodName = point.getSignature().getName();
+			String className = point.getTarget().getClass().getSimpleName();
+			// *========控制台输出=========*//
+			System.out.println("=====通知开始=====");
+			System.out.println(currentTime());
+			System.out.println("请求方法:" + className + "." + methodName + "()");
+			System.out.println(currentTime());
+			System.out.println("=====通知结束=====");
+		} catch (Exception e) {
+			// 记录本地异常日志
+			logger.error("==后置通知异常==");
+			logger.error("异常信息:{}", e.getMessage());
+		}
 	}
 
 	/**
