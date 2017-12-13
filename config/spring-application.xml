@@ -34,7 +34,7 @@
   <tx:annotation-driven transaction-manager="transactionManager"/>
   
   <!-- 激活组件扫描功能,在包com.apin.paySys及其子包下面自动扫描通过注解配置的组件 -->
-  <context:component-scan base-package="com.apin.paySys" annotation-config="true"/>
+  <context:component-scan base-package="com.wiley.shiro" annotation-config="true"/>
   
   <!-- 启动对@AspectJ注解的支持 --> 
   <!-- proxy-target-class等于true是强制使用cglib代理，proxy-target-class默认是false，如果你的类实现了接口 就走JDK代理，如果没有，走cglib代理  -->
@@ -47,7 +47,7 @@
   
     <!-- 凭证匹配器 -->  
     <bean id="credentialsMatcher"  
-        class="com.apin.paySys.common.config.RetryLimitHashedCredentialsMatcher">
+        class="com.wiley.shiro.common.config.RetryLimitHashedCredentialsMatcher">
         <constructor-arg ref="cacheManager" />
         <property name="hashAlgorithmName" value="md5" />
         <property name="hashIterations" value="3" />

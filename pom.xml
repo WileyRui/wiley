@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.apin</groupId>
-	<artifactId>paySys</artifactId>
+	<groupId>com.wiley</groupId>
+	<artifactId>shiro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>paySys</name>
+	<name>spring-shiro</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -21,7 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
@@ -131,7 +131,7 @@
 	</dependencies>
 
 	<build>
- 	    <finalName>paySys</finalName>
+ 	    <finalName>shiro</finalName>
         <resources>
             <resource>
                 <directory>config</directory>
@@ -142,18 +142,18 @@
             </resource>
         </resources>
  		<plugins>
-		    <plugin>
+<!--		    <plugin>
                 <groupId>com.apin</groupId>
-                <artifactId>paySys</artifactId>
+                <artifactId>shiro</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
                 <configuration>
                     <webAppConfig>
                         <contextPath>/paySys</contextPath>
                     </webAppConfig>
-                    <!-- 每3秒的间隔扫描一次,实现热部署 -->
+                    &lt;!&ndash; 每3秒的间隔扫描一次,实现热部署 &ndash;&gt;
                     <scanIntervalSeconds>3</scanIntervalSeconds>
                 </configuration>
-            </plugin>
+            </plugin>-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
