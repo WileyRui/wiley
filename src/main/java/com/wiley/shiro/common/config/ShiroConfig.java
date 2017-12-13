@@ -38,12 +38,12 @@ public class ShiroConfig {
         return new ShiroRealm();
     }
 
-    @Bean(name = "shiroEhcacheManager")
-    public EhCacheManager getEhCacheManager() {
-        EhCacheManager em = new EhCacheManager();
-        em.setCacheManagerConfigFile("classpath:ehcache-shiro.xml");
-        return em;
-    }
+//    @Bean(name = "shiroEhcacheManager")
+//    public EhCacheManager getEhCacheManager() {
+//        EhCacheManager em = new EhCacheManager();
+//        em.setCacheManagerConfigFile("classpath:config/ehcache-shiro.xml");
+//        return em;
+//    }
 
     @Bean(name = "lifecycleBeanPostProcessor")
     public LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
@@ -91,7 +91,7 @@ public class ShiroConfig {
         // 设置realm
         dwsm.setRealm(shiroRealm());
         // 用户授权/认证信息Cache, 采用EhCache 缓存
-        dwsm.setCacheManager(getEhCacheManager());
+//        dwsm.setCacheManager(getEhCacheManager());
         // 注入记住我管理器;
         dwsm.setRememberMeManager(rememberMeManager());
         return dwsm;
