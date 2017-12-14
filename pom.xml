@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>1.5.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -131,7 +131,6 @@
 	</dependencies>
 
 	<build>
- 	    <finalName>shiro</finalName>
         <resources>
             <resource>
                 <directory>config</directory>
@@ -142,18 +141,6 @@
             </resource>
         </resources>
  		<plugins>
-<!--		    <plugin>
-                <groupId>com.apin</groupId>
-                <artifactId>shiro</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-                <configuration>
-                    <webAppConfig>
-                        <contextPath>/paySys</contextPath>
-                    </webAppConfig>
-                    &lt;!&ndash; 每3秒的间隔扫描一次,实现热部署 &ndash;&gt;
-                    <scanIntervalSeconds>3</scanIntervalSeconds>
-                </configuration>
-            </plugin>-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

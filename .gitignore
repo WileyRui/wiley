@@ -26,3 +26,4 @@ target
 *.classpath
 .settings
 
+/shiro.iml

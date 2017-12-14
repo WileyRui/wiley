@@ -2,10 +2,15 @@ package com.wiley.shiro.settings.kernel.entity;
 
 import java.io.Serializable;
 
+/**
+ * 用户实体类
+ * @author wiley
+ *
+ */
 public class SysUser implements Serializable {
     private static final long serialVersionUID = 1L;
     private int id;
-    private String userName;
+    private String name;
     private String password;
     private String salt;
     private int status;
@@ -13,8 +18,8 @@ public class SysUser implements Serializable {
     public SysUser() {
     }
 
-    public SysUser(String userName, String password) {
-        this.userName = userName;
+    public SysUser(String name, String password) {
+        this.name = name;
         this.password = password;
     }
 
@@ -27,7 +32,7 @@ public class SysUser implements Serializable {
     }
 
     public String getSalt() {
-        return userName + salt;
+        return name + salt;
     }
 
     public void setSalt(String salt) {
@@ -36,7 +41,7 @@ public class SysUser implements Serializable {
     
     // 加盐
     public String getCredentialsSalt() {
-        return userName + salt;
+        return name + salt;
     }
 
     public int getId() {
@@ -47,12 +52,12 @@ public class SysUser implements Serializable {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
