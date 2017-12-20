@@ -3,7 +3,6 @@ package com.wiley.shiro.settings.web.controller;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import com.wiley.shiro.settings.kernel.mapper.SysUserMapper;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
@@ -14,10 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.wiley.shiro.common.annotation.SysLog;
+import com.wiley.shiro.settings.kernel.mapper.SysUserMapper;
 
 /**
  * 用户登录
@@ -39,9 +39,8 @@ public class LoginController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("login")
+	@RequestMapping(value="login", method = RequestMethod.GET)
 	public String loginUI(Model model) {
-		model.addAttribute("name", "hello");
 		return "login";
 	}
 
@@ -52,8 +51,7 @@ public class LoginController {
 	 * @param password
 	 * @return
 	 */
-	@RequestMapping("userLogin")
-	@ResponseBody
+	@RequestMapping(value="userLogin",method = RequestMethod.POST)
 	@SysLog(module = "用户管理", methods = "登录", description = "测试切面")
 	public Map<String, Object> login(String userName, String password, Boolean rememberMe, String securityCode,
 			RedirectAttributes redirectAttributes) {

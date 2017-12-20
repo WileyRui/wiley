@@ -14,11 +14,11 @@ $(document).ready(function() {
 		$.ajax({
 			type : "POST",
 			dataType : "json",
-			url : "/userLogin",
+			url : "userLogin",
 			data : $('#loginForm').serialize(),
 			success : function(data){
 			    if(data.status==200){
-			        location.href="index?userName=" + data.userName;
+			        location.href="/index?userName=" + data.userName;
 			    } else{
 			        $("#password").val("");
 			        $("#securityCode").val("");
@@ -28,6 +28,7 @@ $(document).ready(function() {
 			},
 			error : function(e){
 			    console.log("error");
+			    $("#error").html("服务器错误");
 			}
 		});
 	});
